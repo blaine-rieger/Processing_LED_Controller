@@ -60,6 +60,14 @@ public void b1_event(GCustomSlider source, GEvent event) { //_CODE_:b1:491279:
   myPort.write(temp);
 } //_CODE_:b1:491279:
 
+public void checkbox1_clicked1(GCheckbox source, GEvent event) { //_CODE_:checkbox1:702470:
+  println("checkbox1 - GCheckbox >> GEvent." + event + " @ " + millis());
+} //_CODE_:checkbox1:702470:
+
+public void textfield1_change1(GTextField source, GEvent event) { //_CODE_:textfield1:942842:
+  println("textfield1 - GTextField >> GEvent." + event + " @ " + millis());
+} //_CODE_:textfield1:942842:
+
 
 
 // Create all the GUI controls. 
@@ -162,6 +170,14 @@ public void createGUI(){
   label7.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
   label7.setText("B");
   label7.setOpaque(true);
+  checkbox1 = new GCheckbox(this, 318, 69, 120, 20);
+  checkbox1.setIconAlign(GAlign.LEFT, GAlign.MIDDLE);
+  checkbox1.setText("checkbox text");
+  checkbox1.setOpaque(false);
+  checkbox1.addEventHandler(this, "checkbox1_clicked1");
+  textfield1 = new GTextField(this, 154, 242, 120, 30, G4P.SCROLLBARS_NONE);
+  textfield1.setOpaque(true);
+  textfield1.addEventHandler(this, "textfield1_change1");
 }
 
 // Variable declarations 
@@ -186,3 +202,5 @@ GLabel g1_label;
 GLabel label9; 
 GLabel b1_label; 
 GLabel label7; 
+GCheckbox checkbox1; 
+GTextField textfield1; 
