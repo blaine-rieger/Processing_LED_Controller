@@ -136,6 +136,10 @@ public void checkbox1_clicked1(GCheckbox source, GEvent event) { //_CODE_:checkb
   println("checkbox1 - GCheckbox >> GEvent." + event + " @ " + millis());
 } //_CODE_:checkbox1:702470:
 
+public void textfield1_change1(GTextField source, GEvent event) { //_CODE_:textfield1:942842:
+  println("textfield1 - GTextField >> GEvent." + event + " @ " + millis());
+} //_CODE_:textfield1:942842:
+
 
 
 // Create all the GUI controls. 
@@ -243,6 +247,9 @@ public void createGUI(){
   checkbox1.setText("checkbox text");
   checkbox1.setOpaque(false);
   checkbox1.addEventHandler(this, "checkbox1_clicked1");
+  textfield1 = new GTextField(this, 154, 242, 120, 30, G4P.SCROLLBARS_NONE);
+  textfield1.setOpaque(true);
+  textfield1.addEventHandler(this, "textfield1_change1");
 }
 
 // Variable declarations 
@@ -268,7 +275,8 @@ GLabel label9;
 GLabel b1_label; 
 GLabel label7; 
 GCheckbox checkbox1; 
-  public void settings() {  size(480, 200, JAVA2D); }
+GTextField textfield1; 
+  public void settings() {  size(480, 320, JAVA2D); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Processing_LED_Controller" };
     if (passedArgs != null) {
